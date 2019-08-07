@@ -164,3 +164,6 @@ pip-log.txt
 
 # Python
 *.pyc
+
+# Project specific
+init.py

@@ -351,7 +351,7 @@ def apply_settings(settings_file):
         try:
             # We initialize the dictionary to readily contain the settings
             # structures; anything else needs to be explicitly imported
-            execfile(settings_file, pycmd_public.__dict__)
+            exec(compile(open(settings_file, "rb").read(), settings_file, 'exec'), pycmd_public.__dict__, None)
         except Exception as e:
             print('Error encountered when loading ' + settings_file)
             print('Subsequent settings will NOT be applied!')
